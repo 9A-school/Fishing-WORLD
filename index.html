@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fishing World</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#eef7fb;
+      color:#222;
+    }
+
+    header{
+      height:100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600') center/cover;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    header h1{
+      font-size:64px;
+      margin-bottom:20px;
+    }
+
+    header p{
+      font-size:24px;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 35px;
+      background:#00aaff;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      transition:0.3s;
+      font-size:18px;
+    }
+
+    .btn:hover{
+      background:#0088cc;
+    }
+
+    section{
+      padding:80px 10%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:40px;
+      margin-bottom:50px;
+      color:#004b6b;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:white;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:20px;
+    }
+
+    .card h3{
+      margin-bottom:10px;
+      color:#0077aa;
+    }
+
+    .tips{
+      background:#dff4ff;
+      border-radius:20px;
+      padding:40px;
+      text-align:center;
+    }
+
+    .tips button{
+      margin-top:20px;
+      padding:15px 25px;
+      border:none;
+      background:#0077aa;
+      color:white;
+      border-radius:8px;
+      cursor:pointer;
+      font-size:18px;
+    }
+
+    .tips button:hover{
+      background:#005f88;
+    }
+
+    #tipText{
+      margin-top:25px;
+      font-size:22px;
+      color:#004b6b;
+    }
+
+    footer{
+      background:#00384f;
+      color:white;
+      text-align:center;
+      padding:25px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>Fishing WORLD</h1>
+      <p>Всё о рыбалке, снастях и лучших местах</p>
+      <a href="#fish" class="btn">Узнать больше</a>
+    </div>
+  </header>
+
+  <section id="fish">
+    <h2 class="title">Популярные виды рыбы</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1544551763-7ef4209f7d1c?q=80&w=1200" alt="">
+        <div class="card-content">
+          <h3>Щука</h3>
+          <p>Хищная рыба, популярная среди любителей спиннинга.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1510130387422-82bed34b37e9?q=80&w=1200" alt="">
+        <div class="card-content">
+          <h3>Карп</h3>
+          <p>Сильная и осторожная рыба для настоящих терпеливых рыбаков.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?q=80&w=1200" alt="">
+        <div class="card-content">
+          <h3>Окунь</h3>
+          <p>Активная рыба, отлично ловится на небольшие приманки.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="tips">
+      <h2 class="title">Совет рыбака</h2>
+
+      <button onclick="showTip()">Получить совет</button>
+
+      <p id="tipText"></p>
+    </div>
+  </section>
+
+ 
+
+  <script>
+    const tips = [
+      "Лучшее время для рыбалки — раннее утро.",
+      "Используйте живую наживку для хищной рыбы.",
+      "После дождя клёв часто становится лучше.",
+      "Тихое поведение увеличивает шанс хорошего улова.",
